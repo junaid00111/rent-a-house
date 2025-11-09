@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
-const User = require('./model/User');
+const User = require('./model/user');
 
 dotenv.config();
 const app = express();
