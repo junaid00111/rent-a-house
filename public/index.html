@@ -421,7 +421,7 @@
 
     try {
         // Try login first
-        const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch('https://rent-a-house-vqjw.onrender.com/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -434,7 +434,7 @@
         } else if (data.message === 'Invalid email or password') {
             // Offer registration
             if (confirm('User not found. Register instead?')) {
-                const regRes = await fetch('http://localhost:5000/api/register', {
+const regRes = await fetch('https://rent-a-house-vqjw.onrender.com/api/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, password, role })
