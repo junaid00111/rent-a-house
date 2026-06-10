@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a House</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="authPage" class="auth-page">
+        <section class="auth-hero">
+            <div class="hero-content">
+                <p class="eyebrow">Rent a House</p>
+                <h1>Homes worth slowing down for.</h1>
+                <p class="hero-copy">Browse calm, verified-looking spaces and keep your rental search organized from the first visit.</p>
+                <div class="hero-stats">
+                    <div>
+                        <strong>120+</strong>
+                        <span>Homes listed</span>
+                    </div>
+                    <div>
+                        <strong>18</strong>
+                        <span>City areas</span>
+                    </div>
+                    <div>
+                        <strong>24h</strong>
+                        <span>Quick replies</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-panel">
+            <form id="authForm" class="auth-card">
+                <p id="authKicker" class="eyebrow">Welcome back</p>
+                <h2 id="authTitle">Log in to continue</h2>
+                <p class="auth-subtitle">Your saved homes, bookings, and search details stay in one place.</p>
+                
+
+                <div class="auth-tabs">
+                    <button type="button" id="loginTab" class="auth-tab active">Login</button>
+                    <button type="button" id="registerTab" class="auth-tab">Create account</button>
+                </div>
+
+                <p id="message" class="message" aria-live="polite"></p>
+
+                <label class="field register-only">
+                    <span>Name</span>
+                    <input id="name" type="text" autocomplete="name" placeholder="Your name">
+                </label>
+
+                <label class="field">
+                    <span>Email</span>
+                    <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                </label>
+
+                <label class="field">
+                    <span>Password</span>
+                    <div class="password-field">
+                        <input id="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                        <button type="button" id="passwordToggle">Show</button>
+                    </div>
+                </label>
+
+                <label class="field register-only">
+                    <span>Role</span>
+                    <select id="role">
+                        <option value="user">User</option>
+                        <option value="owner">Owner</option>
+                    </select>
+                </label>
+
+                <button id="submitBtn" class="primary-btn" type="submit">Login</button>
+                <p id="authHint" class="auth-hint">New here? Choose create account to get started.</p>
+            </form>
+        </section>
+    </main>
+
+    <main id="dashboardPage" class="dashboard-page hidden">
+        <nav class="topbar">
+            <div>
+                <p class="eyebrow">Rent a House</p>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="topbar-actions">
+                <span id="welcomeText">Welcome</span>
+                <button id="logoutBtn" type="button">Logout</button>
+            </div>
+        </nav>
+
+        <div class="dashboard-shell">
+            <aside class="sidebar">
+                <button class="sidebar-link active" data-section="overviewSection" type="button">Overview</button>
+                <button class="sidebar-link" data-section="profileSection" type="button">Profile</button>
+                <button class="sidebar-link user-nav" data-section="searchSection" type="button">Search Properties</button>
+                <button class="sidebar-link user-nav" data-section="bookingsSection" type="button">Bookings</button>
+                <button class="sidebar-link owner-nav" data-section="addPropertySection" type="button">Add Property</button>
+                <button class="sidebar-link owner-nav" data-section="ownerBookingsSection" type="button">Booking Requests</button>
+                <button class="sidebar-link owner-nav" data-section="myPropertiesSection" type="button">My Properties</button>
+            </aside>
+
+            <div class="dashboard-content">
+        <section id="overviewSection" class="dashboard-section active">
+            <section class="dashboard-hero">
+                <div>
+                    <p class="eyebrow">Hyderabad rentals</p>
+                    <h2>Pick a home that matches your pace.</h2>
+                    <p>Explore practical homes across popular neighborhoods with clear prices and quick details.</p>
+                </div>
+            </section>
+
+            <section class="dashboard-grid">
+                <article class="summary-card">
+                    <p class="eyebrow">Your Role</p>
+                    <h2 id="roleText">User</h2>
+                    <p id="roleSummary">Keep your profile ready and continue your home search.</p>
+                </article>
+
+                <article class="summary-card">
+                    <p class="eyebrow" id="statOneLabel">Saved Searches</p>
+                    <h2 id="statOneValue">3</h2>
+                    <p id="statOneText">Hyderabad homes matching your latest preferences.</p>
+                </article>
+
+                <article class="summary-card">
+                    <p class="eyebrow" id="statTwoLabel">Bookings</p>
+                    <h2 id="statTwoValue">1</h2>
+                    <p id="statTwoText">One booking request is waiting for confirmation.</p>
+                </article>
+            </section>
+        </section>
+
+        <section id="profileSection" class="dashboard-section profile-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Profile</p>
+                    <h2>Your contact details</h2>
+                </div>
+            </div>
+            <div class="profile-layout single-profile">
+                <article class="profile-card">
+                    <p class="eyebrow">Account</p>
+                    <h3 id="profileName">User</h3>
+                    <p id="profileEmail">user@example.com</p>
+                    <p id="profileContact">Contact: Not added yet</p>
+                    <span id="profileRole" class="property-meta">User</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="searchSection" class="dashboard-section tool-section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Search Properties</p>
+                    <h2>Find a place by location or budget</h2>
+                </div>
+            </div>
+            <form id="searchForm" class="tool-form">
+                <label class="field">
+                    <span>Location</span>
+                    <input id="searchLocation" type="text" placeholder="Banjara Hills, Gachibowli...">
+                </label>
+                <label class="field">
+                    <span>Maximum Budget</span>
+                    <input id="searchBudget" type="number" min="0" placeholder="30000">
+                </label>
+                <label class="field">
+                    <span>Property Type</span>
+                    <select id="searchType">
+                        <option value="">All types</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Flat">Flat</option>
+                        <option value="House">House</option>
+                    </select>
+                </label>
+                <button class="primary-btn" type="submit">Search</button>
+                <button class="secondary-btn" id="clearSearchBtn" type="button">Clear</button>
+            </form>
+            <div class="section-heading results-heading">
+                <div>
+                    <p class="eyebrow">Available Homes</p>
+                    <h2 id="propertiesTitle">Start with these places</h2>
+                </div>
+            </div>
+            <p id="emptyProperties" class="empty-state hidden">No properties found. Try a different search.</p>
+            <div id="propertiesGrid" class="properties-grid"></div>
+        </section>
+
+        <section id="bookingsSection" class="dashboard-section profile-section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Bookings</p>
+                    <h2>Properties you booked</h2>
+                </div>
+            </div>
+            <p id="bookingMessage" class="tool-message" aria-live="polite"></p>
+            <p id="emptyBookings" class="empty-state">No bookings yet.</p>
+            <div id="bookingsGrid" class="properties-grid"></div>
+        </section>
+
+        <section id="addPropertySection" class="dashboard-section tool-section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Add Properties</p>
+                    <h2>List a rental for users to discover</h2>
+                </div>
+            </div>
+            <form id="propertyForm" class="tool-form">
+                <label class="field">
+                    <span>Property Title</span>
+                    <input id="propertyTitle" type="text" placeholder="Sunny 2 BHK Apartment">
+                </label>
+                <label class="field">
+                    <span>Location</span>
+                    <input id="propertyLocation" type="text" placeholder="Madhapur, Hyderabad">
+                </label>
+                <label class="field">
+                    <span>Monthly Price</span>
+                    <input id="propertyPrice" type="number" min="0" placeholder="25000">
+                </label>
+                <label class="field">
+                    <span>Property Type</span>
+                    <select id="propertyType">
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Flat">Flat</option>
+                        <option value="House">House</option>
+                    </select>
+                </label>
+                <label class="field">
+                    <span>Contact Number</span>
+                    <input id="propertyContact" type="tel" inputmode="tel" placeholder="+91 98765 43210">
+                </label>
+                <label class="field file-field">
+                    <span>Property Photo</span>
+                    <input id="propertyPhoto" type="file" accept="image/*">
+                </label>
+                <button class="primary-btn" type="submit">Add Property</button>
+            </form>
+            <p id="propertyMessage" class="tool-message" aria-live="polite"></p>
+        </section>
+
+        <section id="myPropertiesSection" class="dashboard-section profile-section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">My Properties</p>
+                    <h2>Listings you added</h2>
+                </div>
+            </div>
+            <article class="profile-list">
+                <div class="profile-list-header">
+                    <div>
+                        <p class="eyebrow">Owner Listings</p>
+                        <h3>Properties visible to users</h3>
+                    </div>
+                    <span id="ownerPropertyCount">0</span>
+                </div>
+                <p id="emptyOwnerProperties" class="empty-state">No properties added yet.</p>
+                <div id="ownerPropertiesGrid" class="owner-properties-grid"></div>
+            </article>
+        </section>
+
+        <section id="ownerBookingsSection" class="dashboard-section profile-section hidden">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Booking Requests</p>
+                    <h2>Tenants interested in your properties</h2>
+                </div>
+            </div>
+            <p id="ownerBookingMessage" class="tool-message" aria-live="polite"></p>
+            <p id="emptyOwnerBookings" class="empty-state">No booking requests yet.</p>
+            <div id="ownerBookingsGrid" class="properties-grid"></div>
+        </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

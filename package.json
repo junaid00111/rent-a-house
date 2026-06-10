@@ -1,0 +1,16 @@
+{
+  "name": "rent-a-house-local",
+  "version": "1.0.0",
+  "description": "Rent a House app with a Node backend and MongoDB persistence.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "mongodb": "^6.18.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
